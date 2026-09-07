@@ -1,4 +1,5 @@
-import os
+import os, time
+time.sleep(3) # Wait for Onedrive to die
 try:
     from zipping import zipPaths
 except ModuleNotFoundError:
@@ -176,7 +177,7 @@ def _zipTheme(freezedThemeJSON: tuple[tuple[Any, Any], ...]) -> Path:
 
     if not themeJSON.get("wallpaper") is None:
         copyFile(Path(str(Path("../").resolve().joinpath(themeJSON['wallpaper']))), gatherPath) # type: ignore
-        themeJSON["cursor"][curMap] = path.name # type: ignore
+        themeJSON["wallpaper"] = themeJSON['wallpaper'].name # type: ignore
 
     copyFilesRec(Path("assets/activate/").resolve(), gatherPath)
     with Path("temp/gather/themedata/theme.rep").open("w") as themeFile:
@@ -258,7 +259,8 @@ def processWallpaperPath(pathStr: str) -> Path:
 def makeWallpaper(ID: str) -> tuple[Response, int]:
     json: list = importFromJSON(Path("../assets/wallpapers.json").resolve()) # type: ignore
     wallpaper: dict[str, str] = findJSONFromObjVal(json, "id", ID)
-    imgPath: Path = processWallpaperPath(json[wallpaper['wallpaper']]) # type: ignore
+    print(wallpaper['wallpaper'])
+    imgPath: Path = processWallpaperPath(wallpaper['wallpaper']) # type: ignore
     themeJSON: dict = {"pathname": f"wallpapers/{ID}/", "name": f"Viskit - {wallpaper['name']}", "wallpaper": imgPath}
 
     zippath: Path = zipTheme(themeJSON)
@@ -270,7 +272,7 @@ if __name__ == "__main__":
         rmFilesRec(Path("temp/"))
 
     Path("temp/gather/").mkdir(parents=True)
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",debug=True)
     print("Killing...")
     import os
     os.system("rm.bat")

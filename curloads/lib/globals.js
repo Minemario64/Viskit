@@ -30,7 +30,7 @@ export const requestCursorsJSONUrl = new URL('../Assets/requested-cursors.json',
 export const curImgsDirUrl = new URL('../../api/assets/cursorImgs/', import.meta.url);
 export const curSetsDirUrl = new URL("../../api/assets/cursorSets/", import.meta.url);
 
-export const rootUrl = new URL("../", import.meta.url);
+export const rootUrl = new URL("../../", import.meta.url);
 
 export const mixApiEndpoints = {
     getCursors: 'http://$[IPV4]:5000/curloads/cursors/',

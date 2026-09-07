@@ -23,7 +23,7 @@ themePath: Path = Path("myTheme.theme").resolve()
 rootPath: Path = Path("../../../").resolve()
 installPathLogPath: Path = Path("installPath").resolve()
 normThemePath: Path = Path(os.path.expandvars(fr"%localappdata%\Microsoft\Windows\Themes\curTheme_{pathname.split("/")[-1]}.theme")).resolve()
-if initJSON.get("cursor") is not None or initJSON.get("wallpaper") is not None:
+if initJSON.get("cursor") is not None or initJSON.get("wallpaper") is not None or initJSON.get("screensaver") is not None:
     setPath: Path = Path.home().joinpath(f"Documents/cursors/{pathname}")
     setPath.mkdir(exist_ok=True, parents=True)
     if initJSON.get("cursor") is not None:
@@ -49,6 +49,18 @@ if initJSON.get("cursor") is not None or initJSON.get("wallpaper") is not None:
                 file.write(wllContent)
 
             initJSON['wallpaper'] = str(docPath.resolve()) # type: ignore
+
+    if initJSON.get("screensaver") is not None:
+        path = initJSON['screensaver']
+        with rootPath.joinpath(path).open("rb") as file: # type: ignore
+            wllContent: bytes = file.read()
+
+            docPath = setPath.joinpath(path) # type: ignore
+            docPath.touch()
+            with docPath.open("wb") as file:
+                file.write(wllContent)
+
+            initJSON['screensaver'] = str(docPath.resolve()) # type: ignore
 
 exportToJSON(initJSON, repPath)
 

@@ -2,6 +2,7 @@ from pathlib import Path
 from zipfile import ZipFile
 from api.zipping import zipPaths
 from api.gentraverse import genLookup
+from tqdm import tqdm
 import sys
 
 MODE: int = 0
@@ -56,7 +57,7 @@ if MODE == 1:
 else:
     TMP_PATH.mkdir()
 
-for dirname in genLookup(CURZIP_ASSET_PATH, ['.txt'], ROOT_PATH):
+for dirname in tqdm(genLookup(CURZIP_ASSET_PATH, ['.txt'], ROOT_PATH), "Updating cursor sets"):
     zipPath = CURZIP_ASSET_PATH.joinpath(dirname).joinpath("cursors.zip")
     if not zipPath.exists():
         continue

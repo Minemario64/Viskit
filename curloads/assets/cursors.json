@@ -221,5 +221,37 @@
             "busy": "pizza_v2/busy.gif",
             "text": "pizza_v2/text.png"
         }
+    },
+    {
+        "id": "modern",
+        "name": "Modern Cursors",
+        "pics": [
+            "modern-stale/mouse.svg"
+        ],
+        "zip": "modern-stale/cursors.zip",
+        "downloadName": "modern_cursors.zip",
+        "preview": {
+            "mouse": "modern-stale/mouse.svg",
+            "select": "modern-stale/select.svg",
+            "busy": "modern-stale/busy.svg",
+            "text": "modern-stale/text.svg",
+            "work-in-bg": "modern-stale/wib.svg"
+        }
+    },
+    {
+        "id": "dmodern",
+        "name": "Dark Modern Cursors",
+        "pics": [
+            "dmodern/mouse.svg"
+        ],
+        "zip": "dmodern/cursors.zip",
+        "downloadName": "dark_modern_cursors.zip",
+        "preview": {
+            "mouse": "dmodern/mouse.svg",
+            "select": "dmodern/select.svg",
+            "busy": "dmodern/busy.svg",
+            "text": "dmodern/text.svg",
+            "work-in-bg": "dmodern/wib.svg"
+        }
     }
 ]

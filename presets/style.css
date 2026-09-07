@@ -78,6 +78,16 @@ div#presets-container>div.block:hover>a>img {
     width: 250px;
 }
 
+div#wallpapers-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div#presets-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 div#wallpapers-container>div.block>img {
     height: 200px;
     border-radius: 20px;

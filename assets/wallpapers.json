@@ -16,5 +16,89 @@
         "name": "Smooth Sunset Wallpaper",
         "wallpaper": "mesc/sunset.jpeg",
         "download": "sunset-wallpaper-theme.zip"
+    },
+    {
+        "id": "dots",
+        "name": "Dots Wallpaper",
+        "wallpaper": "mesc/light-dots.jpg",
+        "download": "dots-wallpaper-theme.zip"
+    },
+    {
+        "id": "anime-fuji",
+        "name": "Mount Fuji Wallpaper",
+        "wallpaper": "nature/japan-fiji.jpeg",
+        "download": "fuji-wallpaper-theme.zip"
+    },
+    {
+        "id": "color-waves",
+        "name": "Color Waves Wallpaper",
+        "wallpaper": "mesc/color-waves.png",
+        "download": "color-waves-wallpaper-theme.zip"
+    },
+    {
+        "id": "glossy-circs",
+        "name": "Windows 11 like glossy Ovals",
+        "wallpaper": "win11like/glossy-circs.jpg",
+        "download": "glossy-circles-wallpaper-theme.zip"
+    },
+    {
+        "id": "coding-penguins",
+        "name": "Penguins Coding Wallpaper",
+        "wallpaper": "tech/penguin.jpg",
+        "download": "peng-coding-wallpaper-theme.zip"
+    },
+    {
+        "id": "xp",
+        "name": "Windows XP Wallpaper",
+        "wallpaper": "xp/og.jpg",
+        "download": "xp-wallpaper-theme.zip"
+    },
+    {
+        "id": "ethereal",
+        "name": "Ethereal Motion Wallpaper",
+        "wallpaper": "win11like/etherial-motion.png",
+        "download": "ethereal-motion-wallpaper-theme.zip"
+    },
+    {
+        "id": "gdforest",
+        "name": "Smooth Forest Wallpaper",
+        "wallpaper": "nature/graphic-forest.jpg",
+        "download": "forest-wallpaper-theme.zip"
+    },
+    {
+        "id": "rainbowchalk",
+        "name": "Rainbow Chalk Wallpaper",
+        "wallpaper": "mesc/rainbow-chalk.jpg",
+        "download": "rainbow-chalk-wallpaper-theme.zip"
+    },
+    {
+        "id": "botw-castle",
+        "name": "Breath of the Wild Castle Wallpaper",
+        "wallpaper": "gaming/botw/castle.jpg",
+        "download": "botw-castle-wallpaper-theme.zip"
+    },
+    {
+        "id": "botw-climb",
+        "name": "Breath of the Wild Climb Wallpaper",
+        "wallpaper": "gaming/botw/climb.jpg",
+        "download": "botw-climb-wallpaper-theme.zip"
+    },
+    {
+        "id": "botw-lynel",
+        "name": "Breath of the Wild Lynel Wallpaper",
+        "wallpaper": "gaming/botw/lynal.jpg",
+        "download": "botw-lynel-wallpaper-theme.zip"
+    },
+    {
+        "id": "mcpe-java",
+        "name": "Minecraft Bundle Wallpaper",
+        "wallpaper": "gaming/mc/mcpe-java.png",
+        "download": "mcpe-java-wallpaper-theme.zip"
+    },
+    {
+        "id": "leaves",
+        "name": "Leaves Wallpaper",
+        "wallpaper": "nature/leaves.jpg",
+        "download": "leaves-wallpaper-theme.zip"
     }
 ]

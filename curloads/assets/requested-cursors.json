@@ -48,5 +48,25 @@
             "arrow-ns": "requests_sustainability/arrow-ns.png",
             "arrow-ew": "requests_sustainability/arrow-ew.png"
         }
+    },
+    {
+        "id": "school",
+        "name": "School Cursors",
+        "pics": [
+            "requests_school/mouse.png"
+        ],
+        "zip": "requests_school/cursors.zip",
+        "downloadName": "school_cursors.zip",
+        "preview": {
+            "mouse": "requests_school/mouse.png",
+            "select": "requests_school/select.png",
+            "busy": "requests_school/busy.gif",
+            "work-in-bg": "requests_school/wib.gif",
+            "arrow-all": "requests_school/arrow-move.png",
+            "arrow-nesw": "requests_school/arrow-nesw.png",
+            "arrow-nwse": "requests_school/arrow-nwse.png",
+            "arrow-ns": "requests_school/arrow-ns.png",
+            "arrow-ew": "requests_school/arrow-ew.png"
+        }
     }
 ]

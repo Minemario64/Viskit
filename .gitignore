@@ -1,1 +1,6 @@
-ip
+/ip
+/upd-act.bat
+/api/assets/*
+tmp
+/api/temp
+/api/.venv

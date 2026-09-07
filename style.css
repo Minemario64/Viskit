@@ -137,7 +137,7 @@ button {
     -o-border-radius: 20px;
 }
 
-div.container:not(#cursor-container):not(#cursor-preview):not(#cursor-mixer) {
+div.container:not(#cursor-container):not(#cursor-preview):not(#cursor-mixer):not(#presets-container):not(#wallpapers-container) {
     justify-content: center;
     justify-self: center;
     display: flex;

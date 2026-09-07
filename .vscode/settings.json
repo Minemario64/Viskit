@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
+        "circs",
         "CURLAYOUT",
         "CURPREVIEW",
         "dblank",
         "Madimi",
+        "oneup",
         "pduck",
         "picpath",
         "picpaths",
@@ -12,4 +14,5 @@
         "topp",
         "zippath"
     ],
+    "git.ignoreLimitWarning": true,
 }

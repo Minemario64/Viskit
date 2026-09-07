@@ -27,6 +27,7 @@ templateReplaceKeys: dict[str, str] = {
     "wallpaper": r"%__--==(\x7)WLL__--==--__%",
     "mode": r"%__--==(\x8)MDE__--==--__%",
     "screensaver": r"%__--==(\x9)SCR__--==--__%",
+    "accent": r"%__--==(\xA)CLR__--==--__%"
 }
 
 defaultCursorPaths: dict[str, str] = {
@@ -43,15 +44,20 @@ defaultCursorPaths: dict[str, str] = {
 }
 
 # Colors for decoding Theme color
+defaultColor: str = r"#0078D7"
 defaultCursor: dict[str, Path] = {key: Path(os.path.expandvars(val)).resolve() for key, val in defaultCursorPaths.items()}
 defaultWallpaper: Path = Path(os.path.expandvars(r"%SystemRoot%\web\wallpaper\Windows\img0.jpg")).resolve()
 
-def makeTheme(name: str, cursor: dict[str, Path] | None = None, wallpaper: Path | None = None, mode: Literal['dark', 'light'] = 'light', screensaver: Path | None = None) -> None:
+def makeTheme(name: str, cursor: dict[str, Path] | None = None, wallpaper: Path | None = None, mode: Literal['dark', 'light'] = 'light', accentColor: str | None = None, screensaver: Path | None = None) -> None:
     with Path("template.theme").open("r", encoding="utf-8") as file:
         content: str = file.read()
 
-    for replaceKey, replaceVal in zip(templateReplaceKeys.values(), [name] + [val for val in ((defaultCursor | cursor).values() if cursor is not None else defaultCursor.values())] + [defaultWallpaper if wallpaper is None else wallpaper, mode, '' if screensaver is None else screensaver]):
+    for replaceKey, replaceVal in zip(templateReplaceKeys.values(), [name] + [val for val in ((defaultCursor | cursor).values() if cursor is not None else defaultCursor.values())] + [defaultWallpaper if wallpaper is None else wallpaper, mode, '' if screensaver is None else screensaver, defaultColor if accentColor is None else accentColor]):
         print(replaceKey, replaceVal)
+        if replaceKey == templateReplaceKeys["accent"]:
+            replaceVal = f"0XC4{replaceVal.removeprefix("#")}" # type: ignore
+            print(f"Transformed Color: {replaceVal}")
+
         content = content.replace(replaceKey, str(replaceVal.resolve()) if isinstance(replaceVal, Path) else replaceVal)
 
     filepath: Path = Path("myTheme.theme")
@@ -69,13 +75,17 @@ def makeThemeFromRep(filepath: Path) -> None:
 
     json = importFromJSON(repPath)
     json.pop("pathname")
+    absCurPaths: dict[str, Path] = {}
+
     if json.get("cursor") is not None:
         for key, path in json['cursor'].items():
             if key == "work-in-bg":
-                json['cursor']["wib"] = Path(os.path.expandvars(path)).resolve()
+                absCurPaths['wib'] = Path(os.path.expandvars(path)).resolve()
                 continue
 
-            json['cursor'][key] = Path(os.path.expandvars(path)).resolve()
+            absCurPaths[key] = Path(os.path.expandvars(path)).resolve()
+
+        json["cursor"] = absCurPaths
 
     if json.get('wallpaper') is not None:
         json['wallpaper'] = Path(os.path.expandvars(json['wallpaper'])).resolve()

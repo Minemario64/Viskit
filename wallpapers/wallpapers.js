@@ -1,4 +1,5 @@
 import {wallpapersJSONUrl, wallpapersDirUrl, processPath, icons, addBtnAnim, initApiRequests, zippedThemeDirUrl} from "../lib/globals.js";
+import {getCookie, setCookie} from "../lib/cookies.js"
 import {loadJSONRunFunc} from "../lib/json-elements.js";
 
 const container = document.getElementById("wallpapers-container");
@@ -44,6 +45,9 @@ function loadCursor(id, wallpaperPath, downloadName, apiEndpoints) {
     let applyThemeMakerBtn = document.createElement("button");
     applyThemeMakerBtn.appendChild(applyThemeMakerImg);
     addBtnAnim(applyThemeMakerBtn);
+    applyThemeMakerBtn.addEventListener("click", () => {
+        setCookie("wallpaperid", id);
+    })
 
     grid.appendChild(downloadBtn);
     grid.appendChild(applyThemeMakerBtn);
@@ -53,7 +57,9 @@ function loadCursor(id, wallpaperPath, downloadName, apiEndpoints) {
 
 initApiRequests("WALLPAPER-PAGE")
 .then(endpointFuncs => {
+    console.log(wallpapersJSONUrl);
     loadJSONRunFunc(wallpapersJSONUrl, data => {
+        console.log(data);
         data.forEach(element => {
             let wallpaperPath = processPath(element.wallpaper, wallpapersDirUrl);
             console.log(wallpaperPath);

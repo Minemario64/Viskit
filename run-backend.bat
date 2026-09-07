@@ -1,3 +1,4 @@
 @echo off
-cd curloads/api
+call "C:\Program Files\Microsoft OneDrive\OneDrive.exe" /shutdown
+cd api
 call python -u main.py

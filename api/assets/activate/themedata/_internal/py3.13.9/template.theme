@@ -52,7 +52,7 @@ Path=%SystemRoot%\resources\themes\Aero\Aero.msstyles
 ColorStyle=NormalColor
 Size=NormalSize
 AutoColorization=0
-ColorizationColor=0XC40078D7
+ColorizationColor=%__--==(\xA)CLR__--==--__%
 SystemMode=%__--==(\x8)MDE__--==--__%
 AppMode=%__--==(\x8)MDE__--==--__%
 
