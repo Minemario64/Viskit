@@ -4,3 +4,5 @@
 tmp
 /api/temp
 /api/.venv
+run.csh
+.vscode

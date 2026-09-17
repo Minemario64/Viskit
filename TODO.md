@@ -5,6 +5,7 @@
 - 24 or 30 cursor packs
 - Most cursors with full packs
 - Wallpapers with animations
+- MacOS Cursor Support
 - Theme Creator:
   - Dark or light mode
   - Wallpaper (custom or preset)
